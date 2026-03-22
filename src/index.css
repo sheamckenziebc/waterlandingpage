@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #1B3A5C;
+  --color-navy-light: #254d78;
+  --color-civic: #2E6DB4;
+  --color-civic-light: #4a8ad4;
+  --color-teal: #3AAFA9;
+  --color-teal-light: #5cc5c0;
+  --color-amber: #E8A838;
+  --color-amber-light: #f0c060;
+  --color-danger: #C0392B;
+  --color-danger-light: #e74c3c;
+  --color-surface: #F4F6F8;
+  --color-surface-dark: #E8ECF0;
+  --color-card: #FFFFFF;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: var(--color-surface);
+  color: #1a1a2e;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Animated step transitions */
+.step-enter {
+  opacity: 0;
+  transform: translateY(12px);
+}
+.step-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+/* Currency input formatting */
+input[type="text"].currency-input {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Chart tooltip styling */
+.recharts-tooltip-wrapper {
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.12));
+}
+
+/* Print styles for downloadable summary */
+@media print {
+  body { background: white; }
+  .no-print { display: none !important; }
+  .print-break { page-break-before: always; }
+}
